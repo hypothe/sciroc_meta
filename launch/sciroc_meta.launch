@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Darknet ROS, implements the yolov3 action server -->
+
+  <include file="$(find tiago_998_navigation)/launch/tiago_navigation.launch"/>
+	
+	<node pkg="sciroc_navigation"  type="navigation.py"	name="navigation" output="screen"  required="true" respawn="false" args="--wait"/>
+	<node pkg="sciroc_poi_state"  type="navigation.py"	name="navigation" output="screen"  required="true" respawn="false" args="--wait"/>
+	
+  <include file="$(find sciroc_objdet)/launch/sciroc_objdet_whole.launch">
+    <arg name="output" value="log"/>
+    <arg name="node_args" value="--wait"/>
+  </include>
+
+  <include file="$(find people_perception)/launch/people_perception.launch"/>
+
+	<!-- TODO: include HRI -->
+	
+	<node pkg="sciroc_logic"  type="poi_state.py"	name="poi_state" output="screen"  required="true" respawn="false" args="--wait"/>
+
+
+
+
+</launch>
