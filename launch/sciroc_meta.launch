@@ -4,7 +4,7 @@
 
   <!-- TODO: shift to a custom tiago_navigation launch file, in order to remap the pal_head_manager out topic -->
 
-  <include file="$(find tiago_998_navigation)/launch/tiago_navigation.launch"/>
+  <include file="$(find sciroc_meta)/launch/tiago_navigation.launch"/>
 	
 	<!-- MUX: output-topic ; input-topic1 input-topic2 -->
 	<node pkg="topic_tools" type="mux" name="point_head_mux" args="/head_controller/point_head_action/goal /head_controller/point_head_action/goal /head_controller/point_head_action_navigation/goal mux:=point_head_mux"/>
