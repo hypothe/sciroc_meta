@@ -8,8 +8,9 @@ project(sciroc_meta)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  darknet_ros
+  yolov5_ros
   sciroc_darknet_bridge
+  sciroc_objdet
   sciroc_hri
   sciroc_logic
   sciroc_navigation
