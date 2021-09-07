@@ -49,19 +49,22 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>darknet_ros</build_depend>
+  <build_depend>yolov5_ros</build_depend>
+  <build_depend>sciroc_objdet</build_depend>
   <build_depend>sciroc_darknet_bridge</build_depend>
   <build_depend>sciroc_hri</build_depend>
   <build_depend>sciroc_logic</build_depend>
   <build_depend>sciroc_navigation</build_depend>
   <build_depend>sciroc_poi_state</build_depend>
-  <build_export_depend>darknet_ros</build_export_depend>
+  <build_export_depend>yolov5_ros</build_export_depend>
+  <build_export_depend>sciroc_objdet</build_export_depend>
   <build_export_depend>sciroc_darknet_bridge</build_export_depend>
   <build_export_depend>sciroc_hri</build_export_depend>
   <build_export_depend>sciroc_logic</build_export_depend>
   <build_export_depend>sciroc_navigation</build_export_depend>
   <build_export_depend>sciroc_poi_state</build_export_depend>
-  <exec_depend>darknet_ros</exec_depend>
+  <exec_depend>yolov5_ros</exec_depend>
+  <exec_depend>sciroc_objdet</exec_depend>
   <exec_depend>sciroc_darknet_bridge</exec_depend>
   <exec_depend>sciroc_hri</exec_depend>
   <exec_depend>sciroc_logic</exec_depend>
