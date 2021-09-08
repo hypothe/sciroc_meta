@@ -12,5 +12,5 @@
   <include file="$(find sciroc_meta)/launch/tiago_2dnav.launch" pass_all_args="true"/>
 
   <!-- SciRoc extras -->
-  <include file="$(find tiago_998_gazebo)/launch/sciroc_extras.launch"/>
+  <include file="$(find sciroc_meta)/launch/sciroc_extras.launch"/>
 </launch>
