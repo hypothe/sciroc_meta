@@ -1,0 +1,11 @@
+# update the values here presented to reflect the contest arena
+
+/mmap/poi:
+  n_of_tables: 1
+  table_names: [t1]
+  submap_0:
+    counter:    [submap_0, counter, 1.4011496305465698, -1.7227386236190796, -3.1050786973036875]
+    t1:         [submap_0, t1, 2.7355854511260986, -0.4980807304382324, -1.5687107318086522]
+    t1_objdet:  [submap_0, t1_objdet, 2.703709125518799, -1.6652761697769165, 0.0]
+    t1_people1: [submap_0, t1_people1, 2.3824567794799805, -0.4855760931968689, -1.0341893297392686]
+    t1_people2: [submap_0, t1_people2, 3.2066586017608643, -0.4857879877090454, -2.1740284175752675]
