@@ -29,9 +29,13 @@
     <!--arg name="node_args" value="- -wait"/-->
   </include>
 
+
+  <include file="$(find dialogflow_ros)/launch/dialogflow_ros.launch">
+	  
   <include file="$(find people_perception)/launch/people_perception.launch"/>
 
 	<!-- TODO: include HRI -->
+	<node pkg="sciroc_hri"  type="hri.py"	name="hri" output="screen"  required="true" respawn="false" args="--wait"/>
 	
 	<node pkg="sciroc_logic"  type="logic.py"	name="sciroc_logic" output="screen"  required="true" respawn="false" args="--wait"/>
 
