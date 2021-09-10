@@ -18,7 +18,8 @@
     </group>
   </group-->
   <!--  load the pois  -->
-	<arg name="pois_param_file"             default="$(find sciroc_meta)/config/tables_poi.yaml"/>
+  <arg name="pois_name"   default="tables_poi.yaml">
+	<arg name="pois_param_file"             default="$(find sciroc_meta)/config/$(arg pois_name)"/>
 	<rosparam command="load" file="$(arg pois_param_file)"/>
 	
 	<node pkg="sciroc_navigation"  type="navigation.py"	name="sciroc_navigation" output="screen"  required="true" respawn="false" args="--wait"/>
