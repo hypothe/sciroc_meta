@@ -25,13 +25,17 @@
 	<node pkg="sciroc_poi_state"  type="poi_state.py"	name="sciroc_poi_state" output="screen"  required="true" respawn="false" args="--wait"/>
 	
   <include file="$(find sciroc_objdet)/launch/sciroc_objdet_whole_module.launch">
-    <!--arg name="output" value="log"/-->
-    <!--arg name="node_args" value="- -wait"/-->
+    <arg name="output" value="screen"/>
+    <arg name="node_args" value="--wait"/>
   </include>
 
+
+  <include file="$(find dialogflow_ros)/launch/dialogflow_ros.launch">
+	  
   <include file="$(find people_perception)/launch/people_perception.launch"/>
 
 	<!-- TODO: include HRI -->
+	<node pkg="sciroc_hri"  type="hri.py"	name="hri" output="screen"  required="true" respawn="false" args="--wait"/>
 	
 	<node pkg="sciroc_logic"  type="logic.py"	name="sciroc_logic" output="screen"  required="true" respawn="false" args="--wait"/>
 
