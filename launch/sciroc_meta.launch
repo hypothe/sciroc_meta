@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <launch>
-
-  <!-- TODO: shift to a custom tiago_navigation launch file, in order to remap the pal_head_manager out topic -->
-
   <!--include file="$(find tiago_998_gazebo)/launch/tiago_navigation.launch"/-->
 
   
@@ -17,24 +14,23 @@
             args="-d $(find tiago_2dnav)/config/rviz/navigation.rviz"/>
     </group>
   </group-->
+
   <!--  load the pois  -->
   <arg name="pois_name"   default="tables_poi.yaml"/>
 	<arg name="pois_param_file"             default="$(find sciroc_meta)/config/$(arg pois_name)"/>
 	<rosparam command="load" file="$(arg pois_param_file)"/>
-	
+	<!--  Navigation and Point of Interests  -->
 	<node pkg="sciroc_navigation"  type="navigation.py"	name="sciroc_navigation" output="screen"  required="true" respawn="false" args="--wait"/>
 	<node pkg="sciroc_poi_state"  type="poi_state.py"	name="sciroc_poi_state" output="screen"  required="true" respawn="false" args="--wait"/>
-	
+	<!--  Object detection module  -->
   <include file="$(find sciroc_objdet)/launch/sciroc_objdet_whole_module.launch"/>
-
-  <include file="$(find dialogflow_ros)/launch/dialogflow_ros.launch"/>
-	  
+	<!--  People Perception  -->
   <include file="$(find people_perception)/launch/people_perception.launch"/>
-
-	<!-- TODO: include HRI -->
+	<!--  Dialogflow order interaction  -->
+  <node pkg="dialogflow_ros"	type="mic_client.py" name="mic_client" output="screen" required="true" args="--wait"/>
+	<!--  Complete Human Robot Interaction  -->
 	<node pkg="sciroc_hri"  type="hri.py"	name="hri" output="screen"  required="true" respawn="false" args="--wait"/>
-	
+	<!--  Overall logic and coordination  -->
 	<node pkg="sciroc_logic"  type="logic.py"	name="sciroc_logic" output="screen"  required="true" respawn="false" args="--wait"/>
-
 
 </launch>
