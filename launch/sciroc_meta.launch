@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <launch>
-  <!--include file="$(find tiago_998_gazebo)/launch/tiago_navigation.launch"/-->
-
-  
+  <!--include file="$(find tiago_998_gazebo)/launch/tiago_navigation.launch"/-->  
   <!--group ns="$(arg namespace)">
     <group if="$(arg advanced_navigation)">
       <node name="rviz" pkg="rviz" type="rviz"
@@ -15,7 +13,7 @@
     </group>
   </group-->
 
-  <!--  load the pois  -->
+  <!--  Load the pois and obstacles  -->
   <arg name="pois_name"   default="tables_poi.yaml"/>
 	<arg name="pois_param_file"             default="$(find sciroc_meta)/config/$(arg pois_name)"/>
 	<rosparam command="load" file="$(arg pois_param_file)"/>
