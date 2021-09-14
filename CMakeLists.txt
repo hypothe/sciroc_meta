@@ -8,13 +8,6 @@ project(sciroc_meta)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  yolov5_ros
-  sciroc_darknet_bridge
-  sciroc_objdet
-  sciroc_hri
-  sciroc_logic
-  sciroc_navigation
-  sciroc_poi_state
 )
 
 ## System dependencies are found with CMake's conventions
