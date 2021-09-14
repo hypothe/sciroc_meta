@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <!--  Load the pois and obstacles  -->
+  <arg name="pois_name"   default="tables_poi.yaml"/>
+	<arg name="pois_param_file"             default="$(find sciroc_meta)/config/$(arg pois_name)"/>
+	<rosparam command="load" file="$(arg pois_param_file)"/>
+
+</launch>
